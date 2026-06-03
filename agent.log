@@ -693,3 +693,20 @@ RuntimeError: El PDF ya contiene una firma en el campo 'Firma'. Envíe el docume
 13:06:05 [INFO] Subida → 200
 13:06:05 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\925f0f87-17ed-415e-98b5-57f21e3201f2.pdf
 13:06:05 [INFO] Proceso completado exitosamente
+15:00:26 [INFO] Agente iniciado: firmador://firmar/?token=4de3ff75-87e9-482d-a212-aa450432472b&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado&act_id=3491
+15:00:26 [INFO] Parámetros: token=4de3ff75-87e9-482d-a212-aa450432472b pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado act_id=3491
+15:00:33 [INFO] Inicio firma: token=4de3ff75-87e9-482d-a212-aa450432472b act_id=3491
+15:00:33 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=4de3ff75-87e9-482d-a212-aa450432472b
+15:00:35 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+15:00:35 [INFO] URL del PDF devuelta por el endpoint: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/4de3ff75-87e9-482d-a212-aa450432472b.pdf
+15:00:35 [INFO] Descargando PDF desde: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/4de3ff75-87e9-482d-a212-aa450432472b.pdf
+15:00:35 [INFO] GET http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/4de3ff75-87e9-482d-a212-aa450432472b.pdf → 200
+15:00:35 [INFO] PDF descargado desde URL (9099 bytes)
+15:00:35 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpt3ev7ez9.pdf
+15:00:35 [INFO] Firmando campo 'Firma' (firmas previas: 0)
+15:00:35 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+15:00:37 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpt3ev7ez9.firmado.pdf
+15:00:37 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+15:00:37 [INFO] Subida → 200
+15:00:37 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\4de3ff75-87e9-482d-a212-aa450432472b.pdf
+15:00:37 [INFO] Proceso completado exitosamente

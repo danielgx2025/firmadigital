@@ -5,7 +5,7 @@ Uso (flujo local):
     python agent.py "firmador://firmar?token=UUID"
 
 Uso (flujo directo, sin localhost):
-    python agent.py "firmador://firmar?token=UUID&pdf_url=http://servidor/pdf/UUID&upload_url=http://servidor/firmado/UUID"
+    python agent.py "firmador://firmar?token=UUID&pdf_url=http://servidor/pdf/UUID&upload_url=http://servidor/firmado/UUID&act_id=1234567890"
 
 Windows ejecuta este script automáticamente cuando el navegador abre
 una URL del tipo firmador://firmar?token=XXXX, siempre que el protocolo
@@ -61,6 +61,15 @@ def _parse_params(url: str) -> dict:
         result["pdf_url"] = params["pdf_url"][0]
     if params.get("upload_url"):
         result["upload_url"] = params["upload_url"][0]
+
+    # act_id es obligatorio: numérico de hasta 10 dígitos (tipo NUMERIC(10))
+    act_ids = params.get("act_id", [])
+    act_id = act_ids[0] if act_ids else None
+    if not act_id or not act_id.isdigit() or len(act_id) > 10:
+        raise ValueError(
+            f"URL sin parámetro 'act_id' válido (numérico de hasta 10 dígitos): {url}"
+        )
+    result["act_id"] = act_id
     return result
 
 
@@ -81,9 +90,10 @@ def _sign_and_upload(
     *,
     pdf_url: str = None,
     upload_url: str = None,
+    act_id: str = None,
 ) -> None:
     """Ejecutado en un hilo secundario para no bloquear la GUI."""
-    log.info(f"Inicio firma: token={token}")
+    log.info(f"Inicio firma: token={token} act_id={act_id}")
     tmp_input = None
     tmp_output = None
     effective_pdf_url = pdf_url or f"{config.SELF_BASE_URL}/obtener-pdf/{token}"
@@ -166,7 +176,7 @@ def _sign_and_upload(
         pdf_b64 = base64.b64encode(pdf_firmado_bytes).decode("utf-8")
         upload = requests.post(
             effective_upload_url,
-            json={"token": token, "pdf": pdf_b64},
+            json={"token": token, "act_id": int(act_id), "pdf": pdf_b64},
             timeout=60,
         )
         log.info(f"Subida → {upload.status_code}")
@@ -216,11 +226,12 @@ def _sign_and_upload(
 
 
 class AgentWindow:
-    def __init__(self, root: tk.Tk, token: str, pdf_url: str = None, upload_url: str = None):
+    def __init__(self, root: tk.Tk, token: str, pdf_url: str = None, upload_url: str = None, act_id: str = None):
         self.root = root
         self.token = token
         self.pdf_url = pdf_url
         self.upload_url = upload_url
+        self.act_id = act_id
         self._build_ui()
 
     def _build_ui(self):
@@ -317,7 +328,7 @@ class AgentWindow:
                 lambda: self.root.after(0, self._on_success),
                 lambda msg: self.root.after(0, self._on_error, msg),
             ),
-            kwargs={"pdf_url": self.pdf_url, "upload_url": self.upload_url},
+            kwargs={"pdf_url": self.pdf_url, "upload_url": self.upload_url, "act_id": self.act_id},
             daemon=True,
         ).start()
 
@@ -354,13 +365,14 @@ def main():
         mb.showerror("Agente de Firma", f"URL inválida: {e}")
         return
 
-    log.info(f"Parámetros: token={params['token']} pdf_url={params.get('pdf_url')} upload_url={params.get('upload_url')}")
+    log.info(f"Parámetros: token={params['token']} pdf_url={params.get('pdf_url')} upload_url={params.get('upload_url')} act_id={params.get('act_id')}")
     root = tk.Tk()
     AgentWindow(
         root,
         token=params["token"],
         pdf_url=params.get("pdf_url"),
         upload_url=params.get("upload_url"),
+        act_id=params.get("act_id"),
     )
     root.mainloop()
 
