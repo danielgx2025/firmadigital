@@ -1,0 +1,695 @@
+11:27:11 [INFO] Agente iniciado: firmador://firmar/?token=85b2c7f8-facf-4650-acf2-acbc49d7cc82&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/85b2c7f8-facf-4650-acf2-acbc49d7cc82
+11:27:11 [INFO] Parámetros: token=85b2c7f8-facf-4650-acf2-acbc49d7cc82 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/ upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/85b2c7f8-facf-4650-acf2-acbc49d7cc82
+11:27:45 [INFO] Inicio firma: token=85b2c7f8-facf-4650-acf2-acbc49d7cc82
+11:27:45 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/ con token=85b2c7f8-facf-4650-acf2-acbc49d7cc82
+11:27:45 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/ → 200
+11:27:45 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\85b2c7f8-facf-4650-acf2-acbc49d7cc82.pdf
+11:27:45 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\85b2c7f8-facf-4650-acf2-acbc49d7cc82.pdf (875112 bytes)
+11:27:45 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpotgf1brq.pdf
+11:27:45 [WARNING] Superfluous whitespace found in object header 1 0
+11:27:45 [WARNING] Superfluous whitespace found in object header 2 0
+11:27:45 [WARNING] Superfluous whitespace found in object header 3 0
+11:27:45 [WARNING] Superfluous whitespace found in object header 70 0
+11:27:46 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpotgf1brq.firmado.pdf
+11:27:46 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/85b2c7f8-facf-4650-acf2-acbc49d7cc82
+11:27:46 [INFO] Subida OK → 404
+11:27:46 [ERROR] Excepción inesperada: 404 Client Error:  for url: http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/85b2c7f8-facf-4650-acf2-acbc49d7cc82
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 140, in _sign_and_upload
+    upload.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error:  for url: http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/85b2c7f8-facf-4650-acf2-acbc49d7cc82
+11:37:22 [INFO] Agente iniciado: firmador://firmar/?token=26e62ac2-b8c5-4b21-87ff-0b423696d746&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/26e62ac2-b8c5-4b21-87ff-0b423696d746
+11:37:22 [INFO] Parámetros: token=26e62ac2-b8c5-4b21-87ff-0b423696d746 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/ upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/26e62ac2-b8c5-4b21-87ff-0b423696d746
+11:37:37 [INFO] Inicio firma: token=26e62ac2-b8c5-4b21-87ff-0b423696d746
+11:37:37 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/ con token=26e62ac2-b8c5-4b21-87ff-0b423696d746
+11:37:37 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/ → 200
+11:37:37 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\26e62ac2-b8c5-4b21-87ff-0b423696d746.pdf
+11:37:37 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\26e62ac2-b8c5-4b21-87ff-0b423696d746.pdf (875112 bytes)
+11:37:37 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpkhepf9u9.pdf
+11:37:37 [WARNING] Superfluous whitespace found in object header 1 0
+11:37:37 [WARNING] Superfluous whitespace found in object header 2 0
+11:37:37 [WARNING] Superfluous whitespace found in object header 3 0
+11:37:37 [WARNING] Superfluous whitespace found in object header 70 0
+11:37:38 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpkhepf9u9.firmado.pdf
+11:37:38 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/26e62ac2-b8c5-4b21-87ff-0b423696d746
+11:37:38 [INFO] Subida OK → 404
+11:37:38 [ERROR] Excepción inesperada: 404 Client Error:  for url: http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/26e62ac2-b8c5-4b21-87ff-0b423696d746
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 140, in _sign_and_upload
+    upload.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error:  for url: http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/26e62ac2-b8c5-4b21-87ff-0b423696d746
+11:41:40 [INFO] Agente iniciado: firmador://firmar/?token=ba7c779f-2599-475a-a173-fcd85eafe108&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/ba7c779f-2599-475a-a173-fcd85eafe108
+11:41:40 [INFO] Parámetros: token=ba7c779f-2599-475a-a173-fcd85eafe108 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/ upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/ba7c779f-2599-475a-a173-fcd85eafe108
+11:41:46 [INFO] Inicio firma: token=ba7c779f-2599-475a-a173-fcd85eafe108
+11:41:46 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/ con token=ba7c779f-2599-475a-a173-fcd85eafe108
+11:41:46 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/ → 200
+11:41:46 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\ba7c779f-2599-475a-a173-fcd85eafe108.pdf
+11:41:46 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\ba7c779f-2599-475a-a173-fcd85eafe108.pdf (875112 bytes)
+11:41:46 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmp9zafu84w.pdf
+11:41:46 [WARNING] Superfluous whitespace found in object header 1 0
+11:41:46 [WARNING] Superfluous whitespace found in object header 2 0
+11:41:46 [WARNING] Superfluous whitespace found in object header 3 0
+11:41:46 [WARNING] Superfluous whitespace found in object header 70 0
+11:41:46 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmp9zafu84w.firmado.pdf
+11:41:46 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/ba7c779f-2599-475a-a173-fcd85eafe108
+11:41:47 [INFO] Subida OK → 404
+11:41:47 [ERROR] Excepción inesperada: 404 Client Error:  for url: http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/ba7c779f-2599-475a-a173-fcd85eafe108
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 140, in _sign_and_upload
+    upload.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error:  for url: http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/ba7c779f-2599-475a-a173-fcd85eafe108
+11:50:31 [INFO] Agente iniciado: firmador://firmar/?token=6c6bdee2-340e-4dd8-bb8d-cdff4e2ccfe3&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/6c6bdee2-340e-4dd8-bb8d-cdff4e2ccfe3
+11:50:31 [INFO] Parámetros: token=6c6bdee2-340e-4dd8-bb8d-cdff4e2ccfe3 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/ upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/6c6bdee2-340e-4dd8-bb8d-cdff4e2ccfe3
+11:50:36 [INFO] Inicio firma: token=6c6bdee2-340e-4dd8-bb8d-cdff4e2ccfe3
+11:50:36 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/ con token=6c6bdee2-340e-4dd8-bb8d-cdff4e2ccfe3
+11:50:36 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf/ → 200
+11:50:36 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\6c6bdee2-340e-4dd8-bb8d-cdff4e2ccfe3.pdf
+11:50:36 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\6c6bdee2-340e-4dd8-bb8d-cdff4e2ccfe3.pdf (875112 bytes)
+11:50:36 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpgrnc_5ix.pdf
+11:50:37 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpgrnc_5ix.firmado.pdf
+11:50:37 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/6c6bdee2-340e-4dd8-bb8d-cdff4e2ccfe3
+11:50:37 [INFO] Subida OK → 404
+11:50:37 [ERROR] Excepción inesperada: 404 Client Error:  for url: http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/6c6bdee2-340e-4dd8-bb8d-cdff4e2ccfe3
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 140, in _sign_and_upload
+    upload.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error:  for url: http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/6c6bdee2-340e-4dd8-bb8d-cdff4e2ccfe3
+13:17:27 [INFO] Agente iniciado: firmador://firmar/?token=6c0e298e-dbda-4493-b53a-90131ea413db&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/6c0e298e-dbda-4493-b53a-90131ea413db
+13:17:27 [INFO] Parámetros: token=6c0e298e-dbda-4493-b53a-90131ea413db pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/6c0e298e-dbda-4493-b53a-90131ea413db
+13:17:50 [INFO] Inicio firma: token=6c0e298e-dbda-4493-b53a-90131ea413db
+13:17:50 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=6c0e298e-dbda-4493-b53a-90131ea413db
+13:17:50 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+13:17:50 [INFO] PDF descargado desde pdf_url (0 bytes)
+13:17:50 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmp6pfhyz_l.pdf
+13:17:50 [ERROR] Excepción inesperada: Illegal PDF header
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 118, in _sign_and_upload
+    sign_pdf_file(tmp_input, tmp_output, pin=pin)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Claude\FirmaDigital\firmatoken\pdf_signer.py", line 27, in sign_pdf_file
+    writer = IncrementalPdfFileWriter(f, strict=False)
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\pyhanko\pdf_utils\incremental_writer.py", line 47, in __init__
+    prev = PdfFileReader(input_stream, strict=strict)
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\pyhanko\pdf_utils\reader.py", line 200, in __init__
+    self._header_version = _read_header_version(stream)
+                           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\pyhanko\pdf_utils\reader.py", line 148, in _read_header_version
+    raise PdfReadError('Illegal PDF header')
+pyhanko.pdf_utils.misc.PdfReadError: Illegal PDF header
+13:18:30 [INFO] Inicio firma: token=6c0e298e-dbda-4493-b53a-90131ea413db
+13:18:30 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=6c0e298e-dbda-4493-b53a-90131ea413db
+13:18:30 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+13:18:30 [INFO] PDF descargado desde pdf_url (0 bytes)
+13:18:30 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpd4zq62mm.pdf
+13:18:30 [ERROR] Excepción inesperada: Illegal PDF header
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 118, in _sign_and_upload
+    sign_pdf_file(tmp_input, tmp_output, pin=pin)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Claude\FirmaDigital\firmatoken\pdf_signer.py", line 27, in sign_pdf_file
+    writer = IncrementalPdfFileWriter(f, strict=False)
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\pyhanko\pdf_utils\incremental_writer.py", line 47, in __init__
+    prev = PdfFileReader(input_stream, strict=strict)
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\pyhanko\pdf_utils\reader.py", line 200, in __init__
+    self._header_version = _read_header_version(stream)
+                           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\pyhanko\pdf_utils\reader.py", line 148, in _read_header_version
+    raise PdfReadError('Illegal PDF header')
+pyhanko.pdf_utils.misc.PdfReadError: Illegal PDF header
+13:31:58 [INFO] Agente iniciado: firmador://firmar/?token=d21f8c47-f000-487c-a714-7c90318332d3&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/d21f8c47-f000-487c-a714-7c90318332d3
+13:31:58 [INFO] Parámetros: token=d21f8c47-f000-487c-a714-7c90318332d3 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/d21f8c47-f000-487c-a714-7c90318332d3
+13:32:02 [INFO] Inicio firma: token=d21f8c47-f000-487c-a714-7c90318332d3
+13:32:02 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=d21f8c47-f000-487c-a714-7c90318332d3
+13:32:03 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+13:32:03 [INFO] Primeros bytes PDF (pdf_url): b''
+13:32:03 [ERROR] Excepción inesperada: El servidor no devolvió un PDF válido. Primeros bytes: b''
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 95, in _sign_and_upload
+    raise ValueError(
+        f"El servidor no devolvió un PDF válido. Primeros bytes: {pdf_bytes[:40]!r}"
+    )
+ValueError: El servidor no devolvió un PDF válido. Primeros bytes: b''
+14:38:58 [INFO] Agente iniciado: firmador://firmar/?token=62ef34f1-364e-4902-8ee3-687b778fec38&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/62ef34f1-364e-4902-8ee3-687b778fec38
+14:38:58 [INFO] Parámetros: token=62ef34f1-364e-4902-8ee3-687b778fec38 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/62ef34f1-364e-4902-8ee3-687b778fec38
+14:39:44 [INFO] Inicio firma: token=62ef34f1-364e-4902-8ee3-687b778fec38
+14:39:44 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=62ef34f1-364e-4902-8ee3-687b778fec38
+14:39:44 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+14:39:44 [INFO] Primeros bytes PDF (pdf_url): b''
+14:39:44 [ERROR] Excepción inesperada: El servidor no devolvió un PDF válido. Primeros bytes: b''
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 95, in _sign_and_upload
+    raise ValueError(
+        f"El servidor no devolvió un PDF válido. Primeros bytes: {pdf_bytes[:40]!r}"
+    )
+ValueError: El servidor no devolvió un PDF válido. Primeros bytes: b''
+15:21:42 [INFO] Agente iniciado: firmador://firmar/?token=a19a1b06-7f9b-4c51-b144-57ff4a2d5631&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/a19a1b06-7f9b-4c51-b144-57ff4a2d5631
+15:21:42 [INFO] Parámetros: token=a19a1b06-7f9b-4c51-b144-57ff4a2d5631 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/a19a1b06-7f9b-4c51-b144-57ff4a2d5631
+15:22:15 [INFO] Inicio firma: token=a19a1b06-7f9b-4c51-b144-57ff4a2d5631
+15:22:15 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=a19a1b06-7f9b-4c51-b144-57ff4a2d5631
+15:22:15 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+15:22:15 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\a19a1b06-7f9b-4c51-b144-57ff4a2d5631.pdf
+15:22:15 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\a19a1b06-7f9b-4c51-b144-57ff4a2d5631.pdf (875112 bytes)
+15:22:15 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpk5n8_zhb.pdf
+15:22:16 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpk5n8_zhb.firmado.pdf
+15:22:16 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/a19a1b06-7f9b-4c51-b144-57ff4a2d5631
+15:22:16 [INFO] Subida → 404
+15:22:16 [ERROR] Excepción inesperada: 404 Client Error:  for url: http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/a19a1b06-7f9b-4c51-b144-57ff4a2d5631
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 153, in _sign_and_upload
+    upload.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error:  for url: http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado/a19a1b06-7f9b-4c51-b144-57ff4a2d5631
+15:38:51 [INFO] Agente iniciado: firmador://firmar/?token=5d93c56f-d847-42e0-9889-f52899fdb378&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+15:38:51 [INFO] Parámetros: token=5d93c56f-d847-42e0-9889-f52899fdb378 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+15:39:04 [INFO] Inicio firma: token=5d93c56f-d847-42e0-9889-f52899fdb378
+15:39:04 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=5d93c56f-d847-42e0-9889-f52899fdb378
+15:39:05 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+15:39:05 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\5d93c56f-d847-42e0-9889-f52899fdb378.pdf
+15:39:05 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\5d93c56f-d847-42e0-9889-f52899fdb378.pdf (875112 bytes)
+15:39:05 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpqd0r92vv.pdf
+15:39:05 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpqd0r92vv.firmado.pdf
+15:39:05 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+15:39:05 [INFO] Subida → 200
+15:39:05 [INFO] Proceso completado exitosamente
+15:57:23 [INFO] Agente iniciado: firmador://firmar/?token=09d54284-23d9-4e5d-a5f0-adc78a3ee2d4&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+15:57:23 [INFO] Parámetros: token=09d54284-23d9-4e5d-a5f0-adc78a3ee2d4 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+15:57:35 [INFO] Inicio firma: token=09d54284-23d9-4e5d-a5f0-adc78a3ee2d4
+15:57:35 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=09d54284-23d9-4e5d-a5f0-adc78a3ee2d4
+15:57:35 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+15:57:35 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\09d54284-23d9-4e5d-a5f0-adc78a3ee2d4.pdf
+15:57:35 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\09d54284-23d9-4e5d-a5f0-adc78a3ee2d4.pdf (875112 bytes)
+15:57:35 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmp634pdr97.pdf
+15:57:36 [ERROR] Excepción inesperada: 
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 139, in _sign_and_upload
+    sign_pdf_file(tmp_input, tmp_output, pin=pin)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Claude\FirmaDigital\firmatoken\pdf_signer.py", line 13, in sign_pdf_file
+    with TokenSession(pin=pin) as tok:
+         ~~~~~~~~~~~~^^^^^^^^^
+  File "E:\Claude\FirmaDigital\firmatoken\token_manager.py", line 23, in __enter__
+    self._session_ctx = token.open(user_pin=self._pin or config.USER_PIN)
+                        ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pkcs11/_pkcs11.pyx", line 484, in pkcs11._pkcs11.Token.open
+  File "pkcs11/_pkcs11.pyx", line 191, in pkcs11._pkcs11.assertRV
+pkcs11.exceptions.PinIncorrect
+16:03:04 [INFO] Inicio firma: token=09d54284-23d9-4e5d-a5f0-adc78a3ee2d4
+16:03:04 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=09d54284-23d9-4e5d-a5f0-adc78a3ee2d4
+16:03:05 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+16:03:05 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\09d54284-23d9-4e5d-a5f0-adc78a3ee2d4.pdf
+16:03:05 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\09d54284-23d9-4e5d-a5f0-adc78a3ee2d4.pdf (875112 bytes)
+16:03:05 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpaa_if36a.pdf
+16:03:05 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpaa_if36a.firmado.pdf
+16:03:05 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:03:05 [INFO] Subida → 200
+16:03:05 [INFO] Proceso completado exitosamente
+16:11:02 [INFO] Agente iniciado: firmador://firmar/?token=2031bd05-40cc-4b4e-9660-ec0b0f65b388&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:11:02 [INFO] Parámetros: token=2031bd05-40cc-4b4e-9660-ec0b0f65b388 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:11:12 [INFO] Inicio firma: token=2031bd05-40cc-4b4e-9660-ec0b0f65b388
+16:11:12 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=2031bd05-40cc-4b4e-9660-ec0b0f65b388
+16:11:12 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+16:11:12 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\2031bd05-40cc-4b4e-9660-ec0b0f65b388.pdf
+16:11:12 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\2031bd05-40cc-4b4e-9660-ec0b0f65b388.pdf (875112 bytes)
+16:11:12 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmp5e550do8.pdf
+16:11:12 [ERROR] Excepción inesperada: 
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 139, in _sign_and_upload
+    sign_pdf_file(tmp_input, tmp_output, pin=pin)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Claude\FirmaDigital\firmatoken\pdf_signer.py", line 14, in sign_pdf_file
+    with TokenSession(pin=pin) as tok:
+         ~~~~~~~~~~~~^^^^^^^^^
+  File "E:\Claude\FirmaDigital\firmatoken\token_manager.py", line 25, in __enter__
+    self._session_ctx = token.open(user_pin=self._pin)
+                        ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "pkcs11/_pkcs11.pyx", line 484, in pkcs11._pkcs11.Token.open
+  File "pkcs11/_pkcs11.pyx", line 191, in pkcs11._pkcs11.assertRV
+pkcs11.exceptions.PinIncorrect
+16:13:26 [INFO] Agente iniciado: firmador://firmar/?token=95fa2662-fa33-45a0-8922-bbf56ef63221&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:13:26 [INFO] Parámetros: token=95fa2662-fa33-45a0-8922-bbf56ef63221 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:13:32 [INFO] Inicio firma: token=95fa2662-fa33-45a0-8922-bbf56ef63221
+16:13:32 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=95fa2662-fa33-45a0-8922-bbf56ef63221
+16:13:34 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+16:13:34 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\95fa2662-fa33-45a0-8922-bbf56ef63221.pdf
+16:13:34 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\95fa2662-fa33-45a0-8922-bbf56ef63221.pdf (875112 bytes)
+16:13:34 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpn0i35w9o.pdf
+16:13:35 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpn0i35w9o.firmado.pdf
+16:13:35 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:13:35 [INFO] Subida → 200
+16:13:35 [INFO] Proceso completado exitosamente
+16:13:56 [INFO] Agente iniciado: firmador://firmar/?token=7050cccb-61a8-4dd9-858a-f0fbfb7e8716&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:13:56 [INFO] Parámetros: token=7050cccb-61a8-4dd9-858a-f0fbfb7e8716 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:14:02 [INFO] Inicio firma: token=7050cccb-61a8-4dd9-858a-f0fbfb7e8716
+16:14:02 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=7050cccb-61a8-4dd9-858a-f0fbfb7e8716
+16:14:02 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+16:14:02 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\7050cccb-61a8-4dd9-858a-f0fbfb7e8716.pdf
+16:14:02 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\7050cccb-61a8-4dd9-858a-f0fbfb7e8716.pdf (875112 bytes)
+16:14:02 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpjgtdiadh.pdf
+16:14:02 [ERROR] Excepción inesperada: 
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 139, in _sign_and_upload
+    sign_pdf_file(tmp_input, tmp_output, pin=pin)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Claude\FirmaDigital\firmatoken\pdf_signer.py", line 14, in sign_pdf_file
+    with TokenSession(pin=pin) as tok:
+         ~~~~~~~~~~~~^^^^^^^^^
+  File "E:\Claude\FirmaDigital\firmatoken\token_manager.py", line 25, in __enter__
+    self._session_ctx = token.open(user_pin=self._pin)
+                        ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "pkcs11/_pkcs11.pyx", line 484, in pkcs11._pkcs11.Token.open
+  File "pkcs11/_pkcs11.pyx", line 191, in pkcs11._pkcs11.assertRV
+pkcs11.exceptions.PinIncorrect
+16:17:15 [INFO] Agente iniciado: firmador://firmar/?token=7caaf63d-7b1f-4d00-a1bf-fc98a682c839&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:17:15 [INFO] Parámetros: token=7caaf63d-7b1f-4d00-a1bf-fc98a682c839 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:17:22 [INFO] Inicio firma: token=7caaf63d-7b1f-4d00-a1bf-fc98a682c839
+16:17:22 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=7caaf63d-7b1f-4d00-a1bf-fc98a682c839
+16:17:22 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+16:17:22 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\7caaf63d-7b1f-4d00-a1bf-fc98a682c839.pdf
+16:17:22 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\7caaf63d-7b1f-4d00-a1bf-fc98a682c839.pdf (875112 bytes)
+16:17:22 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpioilpmq9.pdf
+16:17:22 [ERROR] PIN incorrecto
+16:17:28 [INFO] Inicio firma: token=7caaf63d-7b1f-4d00-a1bf-fc98a682c839
+16:17:28 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=7caaf63d-7b1f-4d00-a1bf-fc98a682c839
+16:17:28 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+16:17:28 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\7caaf63d-7b1f-4d00-a1bf-fc98a682c839.pdf
+16:17:28 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\7caaf63d-7b1f-4d00-a1bf-fc98a682c839.pdf (875112 bytes)
+16:17:28 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpkusebyox.pdf
+16:17:29 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpkusebyox.firmado.pdf
+16:17:29 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:17:29 [INFO] Subida → 200
+16:17:29 [INFO] Proceso completado exitosamente
+16:35:50 [INFO] Agente iniciado: firmador://firmar/?token=8b0f8312-a1de-40b2-8ad0-9aac801aa273&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:35:50 [INFO] Parámetros: token=8b0f8312-a1de-40b2-8ad0-9aac801aa273 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:35:59 [INFO] Inicio firma: token=8b0f8312-a1de-40b2-8ad0-9aac801aa273
+16:35:59 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=8b0f8312-a1de-40b2-8ad0-9aac801aa273
+16:35:59 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+16:35:59 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\8b0f8312-a1de-40b2-8ad0-9aac801aa273.pdf
+16:35:59 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\8b0f8312-a1de-40b2-8ad0-9aac801aa273.pdf (875112 bytes)
+16:35:59 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpd4g8sj2f.pdf
+16:36:00 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpd4g8sj2f.firmado.pdf
+16:36:00 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:36:00 [INFO] Subida → 200
+16:36:00 [INFO] Proceso completado exitosamente
+16:54:24 [INFO] Agente iniciado: firmador://firmar/?token=437e9ecd-f79f-41cb-9f5a-fcbc0297e173&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:54:24 [INFO] Parámetros: token=437e9ecd-f79f-41cb-9f5a-fcbc0297e173 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:54:30 [INFO] Inicio firma: token=437e9ecd-f79f-41cb-9f5a-fcbc0297e173
+16:54:30 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=437e9ecd-f79f-41cb-9f5a-fcbc0297e173
+16:54:31 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+16:54:31 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\437e9ecd-f79f-41cb-9f5a-fcbc0297e173.pdf
+16:54:31 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\437e9ecd-f79f-41cb-9f5a-fcbc0297e173.pdf (875112 bytes)
+16:54:31 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmp5c__o_68.pdf
+16:54:32 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmp5c__o_68.firmado.pdf
+16:54:32 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+16:54:32 [INFO] Subida → 200
+16:54:32 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\437e9ecd-f79f-41cb-9f5a-fcbc0297e173.pdf
+16:54:32 [INFO] Proceso completado exitosamente
+19:11:14 [INFO] Agente iniciado: firmador://firmar/?token=651cb379-0d40-4ed7-becf-005c09c17947&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+19:11:14 [INFO] Parámetros: token=651cb379-0d40-4ed7-becf-005c09c17947 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+19:11:21 [INFO] Inicio firma: token=651cb379-0d40-4ed7-becf-005c09c17947
+19:11:21 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=651cb379-0d40-4ed7-becf-005c09c17947
+19:11:24 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+19:11:24 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\651cb379-0d40-4ed7-becf-005c09c17947.pdf
+19:11:24 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\651cb379-0d40-4ed7-becf-005c09c17947.pdf (875112 bytes)
+19:11:24 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmp12bmwkw4.pdf
+19:11:24 [ERROR] Excepción inesperada: 
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 140, in _sign_and_upload
+    sign_pdf_file(tmp_input, tmp_output, pin=pin)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Claude\FirmaDigital\firmatoken\pdf_signer.py", line 49, in sign_pdf_file
+    key_id = config.PRIVATE_KEY_ID or detect_signing_key_id(tok.session)
+                                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\Claude\FirmaDigital\firmatoken\cert_validator.py", line 80, in detect_signing_key_id
+    priv = list(session.get_objects({
+                ~~~~~~~~~~~~~~~~~~~^^
+        Attribute.CLASS: ObjectClass.PRIVATE_KEY,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        Attribute.ID: cka_id,
+        ^^^^^^^^^^^^^^^^^^^^^
+    }))
+    ^^
+  File "pkcs11/_pkcs11.pyx", line 578, in pkcs11._pkcs11.Session.get_objects
+  File "pkcs11/_pkcs11.pyx", line 506, in pkcs11._pkcs11.SearchIter.__init__
+  File "pkcs11/_pkcs11.pyx", line 191, in pkcs11._pkcs11.assertRV
+pkcs11.exceptions.OperationActive
+19:21:43 [INFO] Agente iniciado: firmador://firmar/?token=66e513e8-c1b2-4127-bffb-cf95bf2124fc&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+19:21:43 [INFO] Parámetros: token=66e513e8-c1b2-4127-bffb-cf95bf2124fc pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+19:21:48 [INFO] Inicio firma: token=66e513e8-c1b2-4127-bffb-cf95bf2124fc
+19:21:48 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=66e513e8-c1b2-4127-bffb-cf95bf2124fc
+19:21:48 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+19:21:48 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\66e513e8-c1b2-4127-bffb-cf95bf2124fc.pdf
+19:21:48 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\66e513e8-c1b2-4127-bffb-cf95bf2124fc.pdf (875112 bytes)
+19:21:48 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmp_tiketob.pdf
+19:21:48 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+19:21:49 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmp_tiketob.firmado.pdf
+19:21:49 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+19:21:49 [INFO] Subida → 200
+19:21:49 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\66e513e8-c1b2-4127-bffb-cf95bf2124fc.pdf
+19:21:49 [INFO] Proceso completado exitosamente
+19:44:33 [INFO] Agente iniciado: firmador://firmar/?token=57a6105d-e5c3-45ee-8394-611c6d84e4c0&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+19:44:33 [INFO] Parámetros: token=57a6105d-e5c3-45ee-8394-611c6d84e4c0 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+19:44:37 [INFO] Inicio firma: token=57a6105d-e5c3-45ee-8394-611c6d84e4c0
+19:44:37 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=57a6105d-e5c3-45ee-8394-611c6d84e4c0
+19:44:38 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+19:44:38 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\57a6105d-e5c3-45ee-8394-611c6d84e4c0.pdf
+19:44:38 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\57a6105d-e5c3-45ee-8394-611c6d84e4c0.pdf (28998 bytes)
+19:44:38 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmp2_hf7vkp.pdf
+19:44:39 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+19:44:39 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmp2_hf7vkp.firmado.pdf
+19:44:39 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+19:44:39 [INFO] Subida → 200
+19:44:39 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\57a6105d-e5c3-45ee-8394-611c6d84e4c0.pdf
+19:44:39 [INFO] Proceso completado exitosamente
+19:55:38 [INFO] Agente iniciado: firmador://firmar/?token=ee466bb8-ae94-47be-a6e0-c74f828e1ee1&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+19:55:38 [INFO] Parámetros: token=ee466bb8-ae94-47be-a6e0-c74f828e1ee1 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+19:55:43 [INFO] Inicio firma: token=ee466bb8-ae94-47be-a6e0-c74f828e1ee1
+19:55:43 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=ee466bb8-ae94-47be-a6e0-c74f828e1ee1
+19:55:43 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+19:55:43 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\ee466bb8-ae94-47be-a6e0-c74f828e1ee1.pdf
+19:55:54 [ERROR] Archivo no encontrado en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\ee466bb8-ae94-47be-a6e0-c74f828e1ee1.pdf
+20:23:38 [INFO] Agente iniciado: firmador://firmar/?token=58e03c9d-345b-452a-b2a6-420da74ed84a&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+20:23:38 [INFO] Parámetros: token=58e03c9d-345b-452a-b2a6-420da74ed84a pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+20:24:36 [INFO] Agente iniciado: firmador://firmar/?token=135c13c4-722b-4695-96c6-ad7467704bc0&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+20:24:36 [INFO] Parámetros: token=135c13c4-722b-4695-96c6-ad7467704bc0 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+20:36:52 [INFO] Agente iniciado: firmador://firmar/?token=523b2122-3742-4318-a38d-0aa1bd9ab728&pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf&upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+20:36:52 [INFO] Parámetros: token=523b2122-3742-4318-a38d-0aa1bd9ab728 pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+20:36:59 [INFO] Inicio firma: token=523b2122-3742-4318-a38d-0aa1bd9ab728
+20:36:59 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf con token=523b2122-3742-4318-a38d-0aa1bd9ab728
+20:37:00 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf → 200
+20:37:00 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\523b2122-3742-4318-a38d-0aa1bd9ab728.pdf
+20:37:10 [ERROR] Archivo no encontrado en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\523b2122-3742-4318-a38d-0aa1bd9ab728.pdf
+20:38:34 [INFO] Inicio firma: token=523b2122-3742-4318-a38d-0aa1bd9ab728
+20:38:34 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf con token=523b2122-3742-4318-a38d-0aa1bd9ab728
+20:38:34 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf → 200
+20:38:34 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\523b2122-3742-4318-a38d-0aa1bd9ab728.pdf
+20:38:44 [ERROR] Archivo no encontrado en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\523b2122-3742-4318-a38d-0aa1bd9ab728.pdf
+22:50:24 [INFO] Agente iniciado: firmador://firmar/?token=fdd0c23e-bbff-4570-b5f5-5ecfd22897c9&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+22:50:24 [INFO] Parámetros: token=fdd0c23e-bbff-4570-b5f5-5ecfd22897c9 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+22:50:50 [INFO] Inicio firma: token=fdd0c23e-bbff-4570-b5f5-5ecfd22897c9
+22:50:50 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=fdd0c23e-bbff-4570-b5f5-5ecfd22897c9
+22:50:51 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+22:50:51 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\fdd0c23e-bbff-4570-b5f5-5ecfd22897c9.pdf
+22:50:51 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\fdd0c23e-bbff-4570-b5f5-5ecfd22897c9.pdf (28998 bytes)
+22:50:51 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpq0ykv_t2.pdf
+22:50:52 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+22:50:53 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpq0ykv_t2.firmado.pdf
+22:50:53 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+22:50:53 [INFO] Subida → 200
+22:50:53 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\fdd0c23e-bbff-4570-b5f5-5ecfd22897c9.pdf
+22:50:53 [INFO] Proceso completado exitosamente
+22:59:06 [INFO] Agente iniciado: firmador://firmar/?token=b213c070-4ed6-4a4d-b0d6-f9e543f56db7&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+22:59:06 [INFO] Parámetros: token=b213c070-4ed6-4a4d-b0d6-f9e543f56db7 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+22:59:18 [INFO] Inicio firma: token=b213c070-4ed6-4a4d-b0d6-f9e543f56db7
+22:59:18 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=b213c070-4ed6-4a4d-b0d6-f9e543f56db7
+22:59:20 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+22:59:20 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\b213c070-4ed6-4a4d-b0d6-f9e543f56db7.pdf
+22:59:20 [INFO] Archivo leído desde disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\b213c070-4ed6-4a4d-b0d6-f9e543f56db7.pdf (28998 bytes)
+22:59:20 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpuwndyg5h.pdf
+22:59:20 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+22:59:21 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpuwndyg5h.firmado.pdf
+22:59:21 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+22:59:21 [INFO] Subida → 200
+22:59:21 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\b213c070-4ed6-4a4d-b0d6-f9e543f56db7.pdf
+22:59:21 [INFO] Proceso completado exitosamente
+23:22:06 [INFO] Agente iniciado: firmador://firmar/?token=74f936fb-6e27-4d9a-964f-3bdb1910d406&pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf&upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+23:22:06 [INFO] Parámetros: token=74f936fb-6e27-4d9a-964f-3bdb1910d406 pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+23:22:14 [INFO] Inicio firma: token=74f936fb-6e27-4d9a-964f-3bdb1910d406
+23:22:14 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf con token=74f936fb-6e27-4d9a-964f-3bdb1910d406
+23:22:14 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf → 200
+23:22:14 [INFO] Esperando archivo en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\74f936fb-6e27-4d9a-964f-3bdb1910d406.pdf
+23:22:25 [ERROR] Archivo no encontrado en disco: C:\Tomcat11\webapps\expedienteJudicialFrontEndTest\static\solicitudes\74f936fb-6e27-4d9a-964f-3bdb1910d406.pdf
+23:41:53 [INFO] Agente iniciado: firmador://firmar/?token=4705d3a9-b90b-49c9-94f9-5f52c927bdb3&pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf&upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+23:41:53 [INFO] Parámetros: token=4705d3a9-b90b-49c9-94f9-5f52c927bdb3 pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+23:42:02 [INFO] Inicio firma: token=4705d3a9-b90b-49c9-94f9-5f52c927bdb3
+23:42:02 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf con token=4705d3a9-b90b-49c9-94f9-5f52c927bdb3
+23:42:02 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf → 200
+23:42:02 [INFO] URL del PDF devuelta por el endpoint: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/4705d3a9-b90b-49c9-94f9-5f52c927bdb3.pdf
+23:42:02 [INFO] Descargando PDF desde: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/4705d3a9-b90b-49c9-94f9-5f52c927bdb3.pdf
+23:42:02 [INFO] GET https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/4705d3a9-b90b-49c9-94f9-5f52c927bdb3.pdf → 200
+23:42:02 [INFO] PDF descargado desde URL (28998 bytes)
+23:42:02 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpnnntjsl2.pdf
+23:42:03 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+23:42:04 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpnnntjsl2.firmado.pdf
+23:42:04 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+23:42:04 [INFO] Subida → 200
+23:42:04 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\4705d3a9-b90b-49c9-94f9-5f52c927bdb3.pdf
+23:42:04 [INFO] Proceso completado exitosamente
+21:58:50 [INFO] Agente iniciado: firmador://firmar/?token=c53d05a2-22d7-414f-8206-07e4bf2946c0&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+21:58:50 [INFO] Parámetros: token=c53d05a2-22d7-414f-8206-07e4bf2946c0 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+21:58:56 [INFO] Inicio firma: token=c53d05a2-22d7-414f-8206-07e4bf2946c0
+21:58:56 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=c53d05a2-22d7-414f-8206-07e4bf2946c0
+21:58:57 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+21:58:57 [INFO] URL del PDF devuelta por el endpoint: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/c53d05a2-22d7-414f-8206-07e4bf2946c0.pdf
+21:58:57 [INFO] Descargando PDF desde: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/c53d05a2-22d7-414f-8206-07e4bf2946c0.pdf
+21:58:57 [INFO] GET http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/c53d05a2-22d7-414f-8206-07e4bf2946c0.pdf → 200
+21:58:57 [INFO] PDF descargado desde URL (812174 bytes)
+21:58:57 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmppwfgrqar.pdf
+21:58:57 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+21:58:59 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmppwfgrqar.firmado.pdf
+21:58:59 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+21:58:59 [INFO] Subida → 200
+21:58:59 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\c53d05a2-22d7-414f-8206-07e4bf2946c0.pdf
+21:58:59 [INFO] Proceso completado exitosamente
+22:19:04 [INFO] Agente iniciado: firmador://firmar/?token=5f44a667-8df5-40da-9090-5cdea80c472f&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+22:19:04 [INFO] Parámetros: token=5f44a667-8df5-40da-9090-5cdea80c472f pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+22:19:10 [INFO] Inicio firma: token=5f44a667-8df5-40da-9090-5cdea80c472f
+22:19:10 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=5f44a667-8df5-40da-9090-5cdea80c472f
+22:19:12 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+22:19:12 [INFO] URL del PDF devuelta por el endpoint: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/5f44a667-8df5-40da-9090-5cdea80c472f.pdf
+22:19:12 [INFO] Descargando PDF desde: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/5f44a667-8df5-40da-9090-5cdea80c472f.pdf
+22:19:12 [INFO] GET http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/5f44a667-8df5-40da-9090-5cdea80c472f.pdf → 200
+22:19:12 [INFO] PDF descargado desde URL (28998 bytes)
+22:19:12 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmp0ago09gl.pdf
+22:19:12 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+22:19:13 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmp0ago09gl.firmado.pdf
+22:19:13 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+22:19:13 [INFO] Subida → 200
+22:19:13 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\5f44a667-8df5-40da-9090-5cdea80c472f.pdf
+22:19:13 [INFO] Proceso completado exitosamente
+10:04:12 [INFO] Agente iniciado: firmador://firmar/?token=b0d3f08c-7457-4fdc-b8a1-e60aa45dad59&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+10:04:12 [INFO] Parámetros: token=b0d3f08c-7457-4fdc-b8a1-e60aa45dad59 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+10:04:17 [INFO] Inicio firma: token=b0d3f08c-7457-4fdc-b8a1-e60aa45dad59
+10:04:17 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=b0d3f08c-7457-4fdc-b8a1-e60aa45dad59
+10:04:19 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+10:04:19 [INFO] URL del PDF devuelta por el endpoint: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/b0d3f08c-7457-4fdc-b8a1-e60aa45dad59.pdf
+10:04:19 [INFO] Descargando PDF desde: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/b0d3f08c-7457-4fdc-b8a1-e60aa45dad59.pdf
+10:04:19 [INFO] GET http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/b0d3f08c-7457-4fdc-b8a1-e60aa45dad59.pdf → 200
+10:04:19 [INFO] PDF descargado desde URL (28998 bytes)
+10:04:19 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpxt6ndka_.pdf
+10:04:19 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+10:04:21 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpxt6ndka_.firmado.pdf
+10:04:21 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+10:04:21 [INFO] Subida → 200
+10:04:21 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\b0d3f08c-7457-4fdc-b8a1-e60aa45dad59.pdf
+10:04:21 [INFO] Proceso completado exitosamente
+08:05:24 [INFO] Agente iniciado: firmador://firmar/?token=568fd76d-7b37-4766-977b-aadfd98b6fde&pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf&upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+08:05:24 [INFO] Parámetros: token=568fd76d-7b37-4766-977b-aadfd98b6fde pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+08:06:59 [INFO] Inicio firma: token=568fd76d-7b37-4766-977b-aadfd98b6fde
+08:06:59 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf con token=568fd76d-7b37-4766-977b-aadfd98b6fde
+08:06:59 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf → 200
+08:06:59 [INFO] URL del PDF devuelta por el endpoint: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/568fd76d-7b37-4766-977b-aadfd98b6fde.pdf
+08:06:59 [INFO] Descargando PDF desde: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/568fd76d-7b37-4766-977b-aadfd98b6fde.pdf
+08:07:01 [INFO] GET https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/568fd76d-7b37-4766-977b-aadfd98b6fde.pdf → 200
+08:07:01 [INFO] PDF descargado desde URL (625589 bytes)
+08:07:01 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpi9jofnd_.pdf
+08:07:01 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+08:07:03 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpi9jofnd_.firmado.pdf
+08:07:03 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+08:07:04 [INFO] Subida → 200
+08:07:04 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\568fd76d-7b37-4766-977b-aadfd98b6fde.pdf
+08:07:04 [INFO] Proceso completado exitosamente
+08:10:01 [INFO] Agente iniciado: firmador://firmar/?token=3dc6166d-bb06-4ea9-9892-a7691715a7d4&pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf&upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+08:10:01 [INFO] Parámetros: token=3dc6166d-bb06-4ea9-9892-a7691715a7d4 pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+09:57:55 [INFO] Agente iniciado: firmador://firmar/?token=a7d68b01-8519-42a2-8f6c-82268a8beb2e&pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf&upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+09:57:55 [INFO] Parámetros: token=a7d68b01-8519-42a2-8f6c-82268a8beb2e pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+09:57:59 [INFO] Inicio firma: token=a7d68b01-8519-42a2-8f6c-82268a8beb2e
+09:57:59 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf con token=a7d68b01-8519-42a2-8f6c-82268a8beb2e
+09:57:59 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf → 200
+09:57:59 [INFO] URL del PDF devuelta por el endpoint: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/a7d68b01-8519-42a2-8f6c-82268a8beb2e.pdf
+09:57:59 [INFO] Descargando PDF desde: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/a7d68b01-8519-42a2-8f6c-82268a8beb2e.pdf
+09:57:59 [INFO] GET https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/a7d68b01-8519-42a2-8f6c-82268a8beb2e.pdf → 200
+09:57:59 [INFO] PDF descargado desde URL (28998 bytes)
+09:57:59 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpmezbg2si.pdf
+09:57:59 [ERROR] PIN incorrecto
+09:58:35 [INFO] Inicio firma: token=a7d68b01-8519-42a2-8f6c-82268a8beb2e
+09:58:35 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf con token=a7d68b01-8519-42a2-8f6c-82268a8beb2e
+09:58:35 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf → 200
+09:58:35 [INFO] URL del PDF devuelta por el endpoint: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/a7d68b01-8519-42a2-8f6c-82268a8beb2e.pdf
+09:58:35 [INFO] Descargando PDF desde: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/a7d68b01-8519-42a2-8f6c-82268a8beb2e.pdf
+09:58:35 [INFO] GET https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/a7d68b01-8519-42a2-8f6c-82268a8beb2e.pdf → 200
+09:58:35 [INFO] PDF descargado desde URL (28998 bytes)
+09:58:35 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpjsm04f94.pdf
+09:58:35 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+09:58:36 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpjsm04f94.firmado.pdf
+09:58:36 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+09:58:36 [INFO] Subida → 200
+09:58:36 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\a7d68b01-8519-42a2-8f6c-82268a8beb2e.pdf
+09:58:36 [INFO] Proceso completado exitosamente
+10:25:19 [INFO] Agente iniciado: firmador://firmar/?token=3e89d75f-be7d-4b04-b8cd-5f79e27c5ae9&pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf&upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+10:25:19 [INFO] Parámetros: token=3e89d75f-be7d-4b04-b8cd-5f79e27c5ae9 pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+10:25:29 [INFO] Inicio firma: token=3e89d75f-be7d-4b04-b8cd-5f79e27c5ae9
+10:25:29 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf con token=3e89d75f-be7d-4b04-b8cd-5f79e27c5ae9
+10:25:29 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf → 200
+10:25:29 [INFO] URL del PDF devuelta por el endpoint: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/3e89d75f-be7d-4b04-b8cd-5f79e27c5ae9.pdf
+10:25:29 [INFO] Descargando PDF desde: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/3e89d75f-be7d-4b04-b8cd-5f79e27c5ae9.pdf
+10:25:30 [INFO] GET https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/3e89d75f-be7d-4b04-b8cd-5f79e27c5ae9.pdf → 200
+10:25:30 [INFO] PDF descargado desde URL (638771 bytes)
+10:25:30 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmp1dpuyw_1.pdf
+10:25:30 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+10:25:31 [ERROR] Excepción inesperada: El PDF ya contiene una firma en el campo 'Firma'. Envíe el documento original sin firmar.
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\pdf_signer.py", line 95, in sign_pdf_file
+    pdf_signer.sign_pdf(
+    ~~~~~~~~~~~~~~~~~~~^
+        writer,
+        ^^^^^^^
+        appearance_text_params=appearance_params,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output=out,
+        ^^^^^^^^^^^
+    )
+    ^
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\pyhanko\sign\signers\pdf_signer.py", line 1528, in sign_pdf
+    result = asyncio.run(
+        self.async_sign_pdf(
+    ...<7 lines>...
+        )
+    )
+  File "C:\Python314\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\pyhanko\sign\signers\pdf_signer.py", line 1586, in async_sign_pdf
+    signing_session = self.init_signing_session(
+        pdf_out,
+        existing_fields_only=existing_fields_only,
+    )
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\pyhanko\sign\signers\pdf_signer.py", line 1267, in init_signing_session
+    sig_field_ref = next(cms_writer)
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\pyhanko\sign\signers\cms_embedder.py", line 450, in write_cms
+    field_created, sig_field_ref = _get_or_create_sigfield(
+                                   ~~~~~~~~~~~~~~~~~~~~~~~^
+        field_name,
+        ^^^^^^^^^^^
+    ...<2 lines>...
+        new_field_spec=new_field_spec,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\pyhanko\sign\signers\cms_embedder.py", line 125, in _get_or_create_sigfield
+    field_created, sig_field_ref = prepare_sig_field(
+                                   ~~~~~~~~~~~~~~~~~^
+        field_name,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        **sig_field_kwargs,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Claude\FirmaDigital\firmatoken\venv\Lib\site-packages\pyhanko\sign\fields.py", line 1489, in prepare_sig_field
+    raise SigningError(
+    ...<2 lines>...
+    )
+pyhanko.sign.general.SigningError: Signature field with name Firma appears to be filled already.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Claude\FirmaDigital\firmatoken\agent.py", line 160, in _sign_and_upload
+    sign_pdf_file(tmp_input, tmp_output, pin=pin)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Claude\FirmaDigital\firmatoken\pdf_signer.py", line 102, in sign_pdf_file
+    raise RuntimeError(
+    ...<2 lines>...
+    ) from e
+RuntimeError: El PDF ya contiene una firma en el campo 'Firma'. Envíe el documento original sin firmar.
+10:49:32 [INFO] Agente iniciado: firmador://firmar/?token=bf365cea-c1e2-4e36-bbb1-81968701756e&pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf&upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+10:49:32 [INFO] Parámetros: token=bf365cea-c1e2-4e36-bbb1-81968701756e pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+10:49:37 [INFO] Inicio firma: token=bf365cea-c1e2-4e36-bbb1-81968701756e
+10:49:37 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf con token=bf365cea-c1e2-4e36-bbb1-81968701756e
+10:49:37 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf → 200
+10:49:37 [INFO] URL del PDF devuelta por el endpoint: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/bf365cea-c1e2-4e36-bbb1-81968701756e.pdf
+10:49:37 [INFO] Descargando PDF desde: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/bf365cea-c1e2-4e36-bbb1-81968701756e.pdf
+10:49:38 [INFO] GET https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/bf365cea-c1e2-4e36-bbb1-81968701756e.pdf → 200
+10:49:38 [INFO] PDF descargado desde URL (638771 bytes)
+10:49:38 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmp72dtbcs2.pdf
+10:49:38 [INFO] Firmando campo 'Firma2' (firmas previas: 1)
+10:49:39 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+10:49:39 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmp72dtbcs2.firmado.pdf
+10:49:39 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+10:49:41 [INFO] Subida → 200
+10:49:41 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\bf365cea-c1e2-4e36-bbb1-81968701756e.pdf
+10:49:41 [INFO] Proceso completado exitosamente
+10:53:19 [INFO] Agente iniciado: firmador://firmar/?token=432af419-28e1-49dc-ae92-6f0535e984f3&pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf&upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+10:53:19 [INFO] Parámetros: token=432af419-28e1-49dc-ae92-6f0535e984f3 pdf_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf upload_url=https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+10:53:25 [INFO] Inicio firma: token=432af419-28e1-49dc-ae92-6f0535e984f3
+10:53:25 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf con token=432af419-28e1-49dc-ae92-6f0535e984f3
+10:53:29 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/pdf → 200
+10:53:29 [INFO] URL del PDF devuelta por el endpoint: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/432af419-28e1-49dc-ae92-6f0535e984f3.pdf
+10:53:29 [INFO] Descargando PDF desde: https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/432af419-28e1-49dc-ae92-6f0535e984f3.pdf
+10:54:13 [INFO] GET https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/static/solicitudes/432af419-28e1-49dc-ae92-6f0535e984f3.pdf → 200
+10:54:13 [INFO] PDF descargado desde URL (651807 bytes)
+10:54:13 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpawtyp49u.pdf
+10:54:13 [INFO] Firmando campo 'Firma3' (firmas previas: 2)
+10:54:13 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+10:54:16 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpawtyp49u.firmado.pdf
+10:54:16 [INFO] POST https://desarrollo-cj.justiciasalta.gov.ar:8520/expjud/apis/firmado
+10:54:17 [INFO] Subida → 200
+10:54:17 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\432af419-28e1-49dc-ae92-6f0535e984f3.pdf
+10:54:17 [INFO] Proceso completado exitosamente
+13:04:25 [INFO] Agente iniciado: firmador://firmar/?token=925f0f87-17ed-415e-98b5-57f21e3201f2&pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf&upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+13:04:25 [INFO] Parámetros: token=925f0f87-17ed-415e-98b5-57f21e3201f2 pdf_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf upload_url=http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+13:05:41 [INFO] Inicio firma: token=925f0f87-17ed-415e-98b5-57f21e3201f2
+13:05:41 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=925f0f87-17ed-415e-98b5-57f21e3201f2
+13:05:43 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+13:05:43 [INFO] URL del PDF devuelta por el endpoint: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/925f0f87-17ed-415e-98b5-57f21e3201f2.pdf
+13:05:43 [INFO] Descargando PDF desde: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/925f0f87-17ed-415e-98b5-57f21e3201f2.pdf
+13:05:43 [INFO] GET http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/925f0f87-17ed-415e-98b5-57f21e3201f2.pdf → 200
+13:05:43 [INFO] PDF descargado desde URL (9099 bytes)
+13:05:43 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpl17ejvvd.pdf
+13:05:43 [INFO] Firmando campo 'Firma' (firmas previas: 0)
+13:05:43 [ERROR] PIN incorrecto
+13:05:50 [INFO] Inicio firma: token=925f0f87-17ed-415e-98b5-57f21e3201f2
+13:05:50 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=925f0f87-17ed-415e-98b5-57f21e3201f2
+13:05:50 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+13:05:50 [INFO] URL del PDF devuelta por el endpoint: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/925f0f87-17ed-415e-98b5-57f21e3201f2.pdf
+13:05:50 [INFO] Descargando PDF desde: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/925f0f87-17ed-415e-98b5-57f21e3201f2.pdf
+13:05:50 [INFO] GET http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/925f0f87-17ed-415e-98b5-57f21e3201f2.pdf → 200
+13:05:50 [INFO] PDF descargado desde URL (9099 bytes)
+13:05:50 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpf8k3fcov.pdf
+13:05:50 [INFO] Firmando campo 'Firma' (firmas previas: 0)
+13:05:51 [ERROR] PIN incorrecto
+13:06:03 [INFO] Inicio firma: token=925f0f87-17ed-415e-98b5-57f21e3201f2
+13:06:03 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf con token=925f0f87-17ed-415e-98b5-57f21e3201f2
+13:06:03 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/pdf → 200
+13:06:03 [INFO] URL del PDF devuelta por el endpoint: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/925f0f87-17ed-415e-98b5-57f21e3201f2.pdf
+13:06:03 [INFO] Descargando PDF desde: http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/925f0f87-17ed-415e-98b5-57f21e3201f2.pdf
+13:06:03 [INFO] GET http://localhost:8081/expedienteJudicialFrontEndTest/static/solicitudes/925f0f87-17ed-415e-98b5-57f21e3201f2.pdf → 200
+13:06:03 [INFO] PDF descargado desde URL (9099 bytes)
+13:06:03 [INFO] Firmando PDF: C:\Users\dcontrer\AppData\Local\Temp\tmpe21fg_f9.pdf
+13:06:03 [INFO] Firmando campo 'Firma' (firmas previas: 0)
+13:06:03 [INFO] CKA_ID de firma auto-detectado: 9ef195dd8c90cbc8
+13:06:05 [INFO] PDF firmado: C:\Users\dcontrer\AppData\Local\Temp\tmpe21fg_f9.firmado.pdf
+13:06:05 [INFO] POST http://localhost:8081/expedienteJudicialFrontEndTest/apis/firmado
+13:06:05 [INFO] Subida → 200
+13:06:05 [INFO] Copia local guardada: E:\Claude\FirmaDigital\firmatoken\pdfs_firmados\925f0f87-17ed-415e-98b5-57f21e3201f2.pdf
+13:06:05 [INFO] Proceso completado exitosamente
