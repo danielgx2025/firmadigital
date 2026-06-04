@@ -235,75 +235,156 @@ class AgentWindow:
         self._build_ui()
 
     def _build_ui(self):
-        self.root.title("Firmar Documento Digital")
+        BANNER_BG = "#14507f"
+        BODY_BG = "#f5f5f5"
+
+        self.root.title("Sistema Expte. Judicial — Poder Judicial de la Provincia de Salta")
         self.root.resizable(False, False)
-        self.root.geometry("380x220")
-        self.root.configure(bg="#f5f5f5")
+        self._center_window(460, 430)
+        self.root.configure(bg=BODY_BG)
 
         try:
             self.root.iconbitmap(default="")
         except Exception:
             pass
 
+        title_font = tkfont.Font(family="Segoe UI", size=12, weight="bold")
+        subtitle_font = tkfont.Font(family="Segoe UI", size=10)
         bold = tkfont.Font(family="Segoe UI", size=10, weight="bold")
         normal = tkfont.Font(family="Segoe UI", size=9)
 
+        # --- Banner azul institucional ---
+        banner = tk.Frame(self.root, bg=BANNER_BG)
+        banner.pack(fill="x")
         tk.Label(
-            self.root,
-            text="Firma Digital — Poder Judicial de Salta",
+            banner,
+            text="Poder Judicial de la Provincia de Salta",
+            font=title_font,
+            bg=BANNER_BG,
+            fg="white",
+            anchor="w",
+        ).pack(fill="x", padx=18, pady=(14, 0))
+        tk.Label(
+            banner,
+            text="Sistema Expte. Judicial",
+            font=subtitle_font,
+            bg=BANNER_BG,
+            fg="#cfe0f0",
+            anchor="w",
+        ).pack(fill="x", padx=18, pady=(0, 14))
+
+        # --- Cuerpo ---
+        body = tk.Frame(self.root, bg=BODY_BG)
+        body.pack(fill="both", expand=True, padx=20)
+
+        tk.Label(
+            body,
+            text="Firma Digital de Documentos",
             font=bold,
-            bg="#f5f5f5",
+            bg=BODY_BG,
             fg="#333",
         ).pack(pady=(18, 2))
 
+        if self.act_id:
+            tk.Label(
+                body,
+                text=f"N.º de actuación: {self.act_id}",
+                font=normal,
+                bg=BODY_BG,
+                fg="#777",
+            ).pack(pady=(0, 6))
+
         tk.Label(
-            self.root,
-            text="Ingrese el PIN del token USB:",
+            body,
+            text="Ingrese el PIN de su token USB:",
             font=normal,
-            bg="#f5f5f5",
+            bg=BODY_BG,
             fg="#555",
         ).pack(pady=(10, 2))
 
         self._pin_var = tk.StringVar()
-        pin_entry = tk.Entry(
-            self.root,
+        self._pin_entry = tk.Entry(
+            body,
             textvariable=self._pin_var,
-            show="*",
+            show="•",
             font=normal,
-            width=20,
+            width=26,
             relief="solid",
             bd=1,
+            justify="center",
         )
-        pin_entry.pack(pady=(0, 10))
-        pin_entry.focus_set()
-        pin_entry.bind("<Return>", lambda _: self._on_firmar())
+        self._pin_entry.pack(ipady=4, pady=(0, 6))
+        self._pin_entry.focus_set()
+        self._pin_entry.bind("<Return>", lambda _: self._on_firmar())
+
+        self._show_pin_var = tk.BooleanVar(value=False)
+        tk.Checkbutton(
+            body,
+            text="Mostrar PIN",
+            variable=self._show_pin_var,
+            command=self._toggle_pin,
+            font=normal,
+            bg=BODY_BG,
+            fg="#555",
+            activebackground=BODY_BG,
+            selectcolor=BODY_BG,
+            cursor="hand2",
+        ).pack()
+
+        # --- Botones ---
+        btn_row = tk.Frame(body, bg=BODY_BG)
+        btn_row.pack(pady=(16, 0))
+
+        tk.Button(
+            btn_row,
+            text="Cancelar",
+            command=self.root.destroy,
+            font=normal,
+            bg="#e0e0e0",
+            fg="#333",
+            relief="flat",
+            padx=18,
+            pady=6,
+            cursor="hand2",
+            activebackground="#cccccc",
+            activeforeground="#333",
+        ).pack(side="left", padx=(0, 8))
 
         self._btn_firmar = tk.Button(
-            self.root,
+            btn_row,
             text="Firmar",
             command=self._on_firmar,
             font=bold,
             bg="#1a6faf",
             fg="white",
             relief="flat",
-            padx=20,
+            padx=24,
             pady=6,
             cursor="hand2",
             activebackground="#155a8a",
             activeforeground="white",
         )
-        self._btn_firmar.pack()
+        self._btn_firmar.pack(side="left")
 
         self._status_var = tk.StringVar()
         self._status_label = tk.Label(
-            self.root,
+            body,
             textvariable=self._status_var,
             font=normal,
-            bg="#f5f5f5",
+            bg=BODY_BG,
             fg="#555",
-            wraplength=340,
+            wraplength=400,
         )
-        self._status_label.pack(pady=(12, 0))
+        self._status_label.pack(pady=(14, 0))
+
+    def _center_window(self, width: int, height: int):
+        self.root.update_idletasks()
+        x = (self.root.winfo_screenwidth() - width) // 2
+        y = (self.root.winfo_screenheight() - height) // 3
+        self.root.geometry(f"{width}x{height}+{x}+{y}")
+
+    def _toggle_pin(self):
+        self._pin_entry.config(show="" if self._show_pin_var.get() else "•")
 
     def _set_status(self, msg: str, color: str = "#555"):
         self._status_var.set(msg)
