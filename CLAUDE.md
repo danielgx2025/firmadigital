@@ -31,8 +31,10 @@ sign_pdf_file(Path('input.pdf'), Path('output_firmado.pdf'), pin='TU_PIN')
 venv/Scripts/python.exe install_protocol.py
 venv/Scripts/python.exe install_protocol.py --remove
 
-# Launch agent manually (normally invoked by Windows via the registered protocol)
-venv/Scripts/python.exe agent.py "firmador://firmar?token=UUID"
+# Launch agent manually (normally invoked by Windows via the registered protocol).
+# act_id (≤10 digits) and legajo (numeric, no length cap) are MANDATORY params;
+# the agent rejects the URL without either.
+venv/Scripts/python.exe agent.py "firmador://firmar?token=UUID&act_id=1234567890&legajo=12345678901"
 
 # --- Packaging / distribution (see BUILD_INSTALADOR.md for the full flow) ---
 # 1. Build the standalone agent .exe (onefile, --windowed)
@@ -68,7 +70,7 @@ token connected (the manual snippet above) and inspecting the output / `agent.lo
 
 - **[config.py](config.py)** — Loads `.env` at import. The only hard failure is a missing PKCS#11 DLL (`FileNotFoundError`). `PRIVATE_KEY_ID` is **optional**: `None` when absent (triggering auto-detection), and only validated as hex (no `0x` prefix, raising `ValueError`) when present. Also exposes `SELF_BASE_URL`, `SOLICITUDES_PATH` (default `./pdfs_solicitudes`), and `FIRMADOS_PATH` (default `./pdfs_firmados`).
 - **[token_manager.py](token_manager.py)** — `TokenSession(pin)` context manager; opens/closes PKCS#11 session via `python-pkcs11`. Raises `RuntimeError` if no token present, `ValueError` if PIN missing.
-- **[pdf_signer.py](pdf_signer.py)** — `sign_pdf_file(input_path, output_path, pin)`: validates certificate, signs with pyHanko `PKCS11Signer`, and stamps a visible 250×72 pt box in the bottom-right corner of the last page showing signer CN, timestamp, reason, and location.
+- **[pdf_signer.py](pdf_signer.py)** — `sign_pdf_file(input_path, output_path, pin)`: validates certificate, signs with pyHanko `PKCS11Signer`, and stamps a visible 250×72 pt box on the last page showing signer CN, timestamp, reason, and location. **Supports co-signing**: if the PDF already has signatures it adds a new one in a uniquely-named field (`Firma`, `Firma2`, `Firma3`…) so prior signatures stay valid, and tiles the visible stamp (bottom-right, stacking upward then into a new column) so boxes don't overlap. See "Visual Signature Stamp" below.
 - **[cert_validator.py](cert_validator.py)** — `detect_signing_key_id(session)` enumerates the token's certificates and returns the CKA_ID of a valid (non-expired) signing certificate that has a matching private key. `validate_certificate(session, key_id)` checks expiry, optional SAN email, OCSP, and CRL (soft-fail on network errors). Returns the parsed `x509.Certificate`. `get_cn_from_cert(cert)` extracts the CN for the stamp text.
 - **[agent.py](agent.py)** — Tkinter GUI launched by Windows when `firmador://firmar?token=...` is opened. Runs signing in a background thread, marshals callbacks to the main thread via `root.after()`. Logs to `agent.log`.
 - **[install_protocol.py](install_protocol.py)** — Writes `HKEY_CLASSES_ROOT\firmador` entries linking `firmador://` to `python.exe + agent.py`. **Requires Administrator** (HKCR). For the Python/dev flow.
@@ -77,20 +79,23 @@ token connected (the manual snippet above) and inspecting the output / `agent.lo
 ## Agent Signing Flow
 
 ```
-Browser opens firmador://firmar?token=UUID
-  → Windows launches: python agent.py "firmador://firmar?token=UUID"
-  → AgentWindow (Tkinter) — PIN entry
-  → background thread _sign_and_upload(token, pin, ...)
+Browser opens firmador://firmar?token=UUID&act_id=1234567890&legajo=12345678901
+  → Windows launches: python agent.py "firmador://firmar?token=UUID&act_id=...&legajo=..."
+  → _parse_params validates token + act_id (≤10 digits) + legajo (numeric, no cap) — ValueError → error dialog
+  → AgentWindow (Tkinter) — PIN entry (shows act_id + legajo, "Mostrar PIN" toggle, Cancelar/Firmar)
+  → background thread _sign_and_upload(token, pin, ..., act_id=act_id, legajo=legajo)
       ├─ [local mode]  GET {SELF_BASE_URL}/obtener-pdf/{token}  (returns PDF bytes; 404/409 handled)
       │                → sign_pdf_file(tmp_input, tmp_output, pin)
-      │                → POST {SELF_BASE_URL}/subir-firmado/{token}  {"token", "pdf": <base64>}
+      │                → POST {SELF_BASE_URL}/subir-firmado/{token}  {"token", "act_id": int, "legajo": int, "pdf": <base64>}
       └─ [remote mode] POST pdf_url {"token": token}             → JSON {"url": "..."}
                        → _rebase_url(url, pdf_url)  (rewrite host to the endpoint's)
                        → GET <download_url>  (validates leading %PDF)
                        → sign_pdf_file(tmp_input, tmp_output, pin)
-                       → POST upload_url {"token": token, "pdf": <base64>}
+                       → POST upload_url {"token", "act_id": int, "legajo": int, "pdf": <base64>}
   → (both modes) save a local copy to FIRMADOS_PATH/{token}.pdf after upload
 ```
+
+`act_id` (Nº de actuación) and `legajo` are **mandatory** query params parsed by `_parse_params`; both must be numeric — `act_id` ≤10 digits (DB `NUMERIC(10)`); `legajo` has no length cap (just numeric + present). Both are shown in the PIN window and sent as `int` in the upload payload of both modes. The agent only forwards `legajo`; it does not use it in the PDF signature itself.
 
 **Remote mode** is triggered when the `firmador://` URL includes `pdf_url` and `upload_url` query parameters. The agent fetches the PDF over HTTP (POST → JSON `{"url"}` → GET); it does **not** read from disk. `SOLICITUDES_PATH` is currently unused by `agent.py` (it is loaded in `config.py` but reserved for the planned API). PKCS#11 errors are mapped to Spanish UI messages: `PinIncorrect`, `PinLocked` (PUK hint), and `TokenNotPresent`/`SlotIDInvalid` (token not detected); connection errors distinguish local vs. remote.
 
@@ -127,7 +132,7 @@ pyHanko's signer is at `pyhanko.sign.pkcs11.PKCS11Signer`.
 
 ## Visual Signature Stamp
 
-`pdf_signer.py` reads the last page dimensions with `pypdf.PdfReader`, then places a `SigFieldSpec` box (250×72 pts, bottom-right corner, 10 pt margin) on that page via a `TextStampStyle`. The stamp text template:
+`pdf_signer.py` reads the last page dimensions with `pypdf.PdfReader`, then places a `SigFieldSpec` box (250×72 pts, 10 pt margin) on that page via a `TextStampStyle` (font size 8, transparent background, 1 pt border). The stamp text template:
 
 ```
 Firmado digitalmente por: %(signer)s
@@ -137,6 +142,13 @@ Lugar: %(location)s
 ```
 
 `%(ts)s` is filled automatically by pyHanko. `%(signer)s` comes from `get_cn_from_cert(cert)`.
+
+**Co-signing layout** — three helpers keep multiple signatures from clobbering each other:
+- `_existing_sig_field_names(input_path)` enumerates existing signature fields (via `enumerate_sig_fields` on an `IncrementalPdfFileWriter`).
+- `_unique_field_name(existing)` returns the next free field name — the first signature is `Firma` (original behavior), then `Firma2`, `Firma3`…
+- `_stamp_box(page_w, page_h, n)` positions the visible box for signature *n* (0-based): `n == 0` is the bottom-right corner; higher *n* stack upward, then wrap into a new column to the left once a column fills.
+
+Signing always uses an **incremental** write so previously-applied signatures remain cryptographically valid.
 
 ## Planned Components (not yet implemented)
 

@@ -5,7 +5,7 @@ Uso (flujo local):
     python agent.py "firmador://firmar?token=UUID"
 
 Uso (flujo directo, sin localhost):
-    python agent.py "firmador://firmar?token=UUID&pdf_url=http://servidor/pdf/UUID&upload_url=http://servidor/firmado/UUID&act_id=1234567890"
+    python agent.py "firmador://firmar?token=UUID&pdf_url=http://servidor/pdf/UUID&upload_url=http://servidor/firmado/UUID&act_id=1234567890&legajo=12345678901"
 
 Windows ejecuta este script automáticamente cuando el navegador abre
 una URL del tipo firmador://firmar?token=XXXX, siempre que el protocolo
@@ -70,6 +70,15 @@ def _parse_params(url: str) -> dict:
             f"URL sin parámetro 'act_id' válido (numérico de hasta 10 dígitos): {url}"
         )
     result["act_id"] = act_id
+
+    # legajo es obligatorio: numérico (sin tope de longitud)
+    legajos = params.get("legajo", [])
+    legajo = legajos[0] if legajos else None
+    if not legajo or not legajo.isdigit():
+        raise ValueError(
+            f"URL sin parámetro 'legajo' válido (numérico, obligatorio): {url}"
+        )
+    result["legajo"] = legajo
     return result
 
 
@@ -91,9 +100,10 @@ def _sign_and_upload(
     pdf_url: str = None,
     upload_url: str = None,
     act_id: str = None,
+    legajo: str = None,
 ) -> None:
     """Ejecutado en un hilo secundario para no bloquear la GUI."""
-    log.info(f"Inicio firma: token={token} act_id={act_id}")
+    log.info(f"Inicio firma: token={token} act_id={act_id} legajo={legajo}")
     tmp_input = None
     tmp_output = None
     effective_pdf_url = pdf_url or f"{config.SELF_BASE_URL}/obtener-pdf/{token}"
@@ -176,7 +186,7 @@ def _sign_and_upload(
         pdf_b64 = base64.b64encode(pdf_firmado_bytes).decode("utf-8")
         upload = requests.post(
             effective_upload_url,
-            json={"token": token, "act_id": int(act_id), "pdf": pdf_b64},
+            json={"token": token, "act_id": int(act_id), "legajo": int(legajo), "pdf": pdf_b64},
             timeout=60,
         )
         log.info(f"Subida → {upload.status_code}")
@@ -226,12 +236,13 @@ def _sign_and_upload(
 
 
 class AgentWindow:
-    def __init__(self, root: tk.Tk, token: str, pdf_url: str = None, upload_url: str = None, act_id: str = None):
+    def __init__(self, root: tk.Tk, token: str, pdf_url: str = None, upload_url: str = None, act_id: str = None, legajo: str = None):
         self.root = root
         self.token = token
         self.pdf_url = pdf_url
         self.upload_url = upload_url
         self.act_id = act_id
+        self.legajo = legajo
         self._build_ui()
 
     def _build_ui(self):
@@ -289,6 +300,15 @@ class AgentWindow:
             tk.Label(
                 body,
                 text=f"N.º de actuación: {self.act_id}",
+                font=normal,
+                bg=BODY_BG,
+                fg="#777",
+            ).pack(pady=(0, 2))
+
+        if self.legajo:
+            tk.Label(
+                body,
+                text=f"Legajo: {self.legajo}",
                 font=normal,
                 bg=BODY_BG,
                 fg="#777",
@@ -409,7 +429,7 @@ class AgentWindow:
                 lambda: self.root.after(0, self._on_success),
                 lambda msg: self.root.after(0, self._on_error, msg),
             ),
-            kwargs={"pdf_url": self.pdf_url, "upload_url": self.upload_url, "act_id": self.act_id},
+            kwargs={"pdf_url": self.pdf_url, "upload_url": self.upload_url, "act_id": self.act_id, "legajo": self.legajo},
             daemon=True,
         ).start()
 
@@ -446,7 +466,7 @@ def main():
         mb.showerror("Agente de Firma", f"URL inválida: {e}")
         return
 
-    log.info(f"Parámetros: token={params['token']} pdf_url={params.get('pdf_url')} upload_url={params.get('upload_url')} act_id={params.get('act_id')}")
+    log.info(f"Parámetros: token={params['token']} pdf_url={params.get('pdf_url')} upload_url={params.get('upload_url')} act_id={params.get('act_id')} legajo={params.get('legajo')}")
     root = tk.Tk()
     AgentWindow(
         root,
@@ -454,6 +474,7 @@ def main():
         pdf_url=params.get("pdf_url"),
         upload_url=params.get("upload_url"),
         act_id=params.get("act_id"),
+        legajo=params.get("legajo"),
     )
     root.mainloop()
 
