@@ -116,6 +116,21 @@ def get_cn_from_cert(cert: x509.Certificate) -> str:
     return "Firmante Desconocido"
 
 
+def get_email_from_cert(cert: x509.Certificate) -> Optional[str]:
+    """Devuelve el email del firmante: primero del SAN (rfc822_name),
+    como respaldo del emailAddress del subject. None si no hay ninguno."""
+    san = cert.subject_alt_name_value
+    if san is not None:
+        for gn in san:
+            if gn.name == 'rfc822_name':
+                return gn.chosen.native
+    for rdn in cert.subject.chosen:
+        for atv in rdn:
+            if atv['type'].native == 'email_address':
+                return atv['value'].native
+    return None
+
+
 def check_expiry(cert: x509.Certificate) -> None:
     now = datetime.now(tz=timezone.utc)
     not_after = cert['tbs_certificate']['validity']['not_after'].chosen.native

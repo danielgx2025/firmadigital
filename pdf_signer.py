@@ -6,9 +6,15 @@ from pyhanko.sign.pkcs11 import PKCS11Signer
 from pyhanko.sign import signers, fields as sig_fields
 from pyhanko.pdf_utils.incremental_writer import IncrementalPdfFileWriter
 from pyhanko.stamp.text import TextStampStyle, TextBoxStyle
+from pyhanko.pdf_utils.layout import SimpleBoxLayoutRule, AxisAlignment, Margins
 
 import config
-from cert_validator import validate_certificate, get_cn_from_cert, detect_signing_key_id
+from cert_validator import (
+    validate_certificate,
+    get_cn_from_cert,
+    get_email_from_cert,
+    detect_signing_key_id,
+)
 from token_manager import TokenSession
 
 log = logging.getLogger(__name__)
@@ -16,11 +22,15 @@ log = logging.getLogger(__name__)
 _STAMP_TEXT = (
     "Firmado digitalmente por: %(signer)s\n"
     "Fecha: %(ts)s\n"
-    "Motivo: %(reason)s\n"
+    "Email: %(email)s\n"
     "Lugar: %(location)s"
 )
+_STAMP_FONT_SIZE = 8
+_STAMP_PAD_V = 4   # padding interno arriba/abajo (pt)
+_STAMP_PAD_H = 8   # padding interno izquierda/derecha (pt)
 _STAMP_W = 250
-_STAMP_H = 72
+_STAMP_LINES = _STAMP_TEXT.count("\n") + 1            # 4 líneas
+_STAMP_H = _STAMP_LINES * _STAMP_FONT_SIZE + 2 * _STAMP_PAD_V   # 4*8 + 8 = 40 pt
 _STAMP_MARGIN = 10
 _STAMP_GAP = 6  # separación entre sellos apilados
 
@@ -89,6 +99,7 @@ def sign_pdf_file(input_path: Path, output_path: Path, pin: str = None) -> None:
         key_id = config.PRIVATE_KEY_ID or detect_signing_key_id(tok.session)
         cert = validate_certificate(tok.session, key_id)
         signer_name = get_cn_from_cert(cert)
+        signer_email = get_email_from_cert(cert) or "Documento firmado digitalmente"
 
         pkcs11_signer = PKCS11Signer(
             pkcs11_session=tok.session,
@@ -98,7 +109,7 @@ def sign_pdf_file(input_path: Path, output_path: Path, pin: str = None) -> None:
 
         sig_meta = signers.PdfSignatureMetadata(
             field_name=field_name,
-            reason="Documento firmado digitalmente",
+            reason=signer_email,
             location="Salta, Argentina",
         )
 
@@ -110,7 +121,17 @@ def sign_pdf_file(input_path: Path, output_path: Path, pin: str = None) -> None:
 
         stamp_style = TextStampStyle(
             stamp_text=_STAMP_TEXT,
-            text_box_style=TextBoxStyle(font_size=8),
+            text_box_style=TextBoxStyle(
+                font_size=_STAMP_FONT_SIZE,
+                box_layout_rule=SimpleBoxLayoutRule(
+                    x_align=AxisAlignment.ALIGN_MID,
+                    y_align=AxisAlignment.ALIGN_MID,
+                    margins=Margins(
+                        left=_STAMP_PAD_H, right=_STAMP_PAD_H,
+                        top=_STAMP_PAD_V, bottom=_STAMP_PAD_V,
+                    ),
+                ),
+            ),
             background_opacity=0,
             border_width=1,
         )
@@ -124,7 +145,7 @@ def sign_pdf_file(input_path: Path, output_path: Path, pin: str = None) -> None:
 
         appearance_params = {
             "signer": signer_name,
-            "reason": "Documento firmado digitalmente",
+            "email": signer_email,
             "location": "Salta, Argentina",
         }
 
